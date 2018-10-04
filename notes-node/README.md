@@ -7,3 +7,8 @@ Then run the app.js in the console via node command:
 ``
 node app.js
 ``
+To initialize the module run:
+``
+npm init
+``
+
