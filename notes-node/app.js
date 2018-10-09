@@ -6,13 +6,13 @@ const notes = require('./notes.js');
 
 var user = os.userInfo();
 
-console.log(user);
+// console.log(user);
 
-fs.appendFile('hola.txt', `Hello ${user.username} ! Your are ${notes.age}`, function(err){
-    if(err){
-        console.log('No pudo abrir');
-    }
-});
+// fs.appendFile('hola.txt', `Hello ${user.username} ! Your are ${notes.age}`, function(err){
+//     if(err){
+//         console.log('No pudo abrir');
+//     }
+// });
 
 var res = notes.addNote();
 console.log(res);
