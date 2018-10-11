@@ -1,4 +1,4 @@
-console.log('Starting notes.js');
+console.log("Starting notes.js");
 
 //module.exports.age = 25;
 
@@ -11,24 +11,41 @@ console.log('Starting notes.js');
 //     return a+b;
 // };
 
-var addNote =(title, body) => {
-    console.log('Adding note', title, body);
+const fs = require("fs");
+
+var addNote = (title, body) => {
+  console.log("Adding note", title, body);
+  var notes = [];
+  var note = {
+    title,
+    body
+  };
+
+  try {
+    var notesString = fs.readFileSync("notes-data.json");
+    notes = JSON.parse(notesString);
+  } catch (e) {
+      //console.log(e);
+  }
+
+  notes.push(note);
+  fs.writeFileSync("notes-data.json", JSON.stringify(notes));
 };
 
-var getAll = () =>{
-    console.log("Get all");
-}
-
-var remove =(title) => {
-    console.log('Remove note', title);
+var getAll = () => {
+  console.log("Get all");
 };
 
-var read =(title) => {
-    console.log('read note', title);
+var remove = title => {
+  console.log("Remove note", title);
+};
+
+var read = title => {
+  console.log("read note", title);
 };
 module.exports = {
-    addNote,
-    getAll,
-    remove,
-    read
+  addNote,
+  getAll,
+  remove,
+  read
 };
