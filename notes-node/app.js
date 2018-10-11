@@ -17,10 +17,13 @@ if (command === 'add'){
     notes.addNote(argv.title, argv.body);
 } else if (command === 'list'){
     console.log('List all notes');
+    notes.getAll();
 } else if (command === 'remove'){
     console.log('Remove all notes');
+    notes.remove(argv.title);
 } else if (command === 'read'){
     console.log('Read all notes');
+    notes.read(argv.title);
 } else {
     console.log('No define');
 }

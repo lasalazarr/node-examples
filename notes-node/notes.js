@@ -15,6 +15,20 @@ var addNote =(title, body) => {
     console.log('Adding note', title, body);
 };
 
+var getAll = () =>{
+    console.log("Get all");
+}
+
+var remove =(title) => {
+    console.log('Remove note', title);
+};
+
+var read =(title) => {
+    console.log('read note', title);
+};
 module.exports = {
-    addNote
+    addNote,
+    getAll,
+    remove,
+    read
 };
